@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0px;
+    font-family: 'segoe ui';
+    background-image: url('/img/Snapinsta\ 1.svg');
+    background-size: 1400px 700px; /* definindo o tamanho da imagem */
+    background-repeat: no-repeat; /* impedir a repetição da imagem */
+    background-position: center top; /* centralizar a imagem horizontalmente e posicioná-la no topo */
+  }
+  
+  .nav {
+    height: 80px;
+    width: 100%;
+    color: white;
+  }
+  
+  
+  .nav > .nav-header {
+    display: inline;
+  }
+  
+  .nav-title img {
+    width: 50px; /* largura desejada */
+    height: auto; /* altura ajustável conforme a largura */
+    margin-top: -5px; /* ajuste conforme necessário para mover a imagem para cima */
+    cursor: pointer;
+  }
+  
+  .nav > .nav-header > .nav-title {
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    padding: 10px 10px 10px 10px;
+  }
+  
+  .nav > .nav-btn {
+    display: none;
+    padding: 2px 2px;
+    border-radius: 15px; 
+  }
+  
+  .nav > .nav-links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+  }
+  
+  .nav > #nav-check {
+    display: none;
+  }
+  
+  @media (max-width:600px) {
+    .nav > .nav-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+  }
+  .btn {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    background-color: white; 
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.5s, transform 0.2s;
+    text-decoration: none;
+    margin-top: 5;
+  }
+  
+  .btn:hover{
+    background-color: hotpink;
+    transform: translateY(-3px);
+  }
+  
+  .btn-pink {
+    background-color: #EC3CB0;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 5;
+  }
+  
+  .btn-pink:hover {
+    background-color: hotpink; /* Altere a cor ao passar o mouse, se desejar */
+  }
