@@ -2,34 +2,130 @@
 <html lang="pt">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aluguel de Garagem</title>
-    <link rel="stylesheet" href="/garage-for-rent/style.css">
-</head>
 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garashare</title>
+  <link rel="stylesheet" href="/garage-for-rent/style.css">
+</head>
 <body>
-  <div class="nav">
-    <input type="checkbox" id="nav-check">
-    <div class="nav-header">
-      <div class="nav-title">
-        <img src="/garage-for-rent/img/logo barra nav.svg" alt="Logo">
-    </div>    
+  <div class="wrap">
+    <div class="menu">
+      <div class="menu__container">
+        <img class="menu__logo" src="/garage-for-rent/img/logo barra nav.svg" alt="Logo">
+        <i class="menu__icon ion-navicon" id="icon"></i>
+        <!-- update 01/01/2017 -->
+        <ul class="menu__list">
+          <li class="menu__item">Buscar Vaga</li>
+          <li class="menu__item">Anunciar Garagem</li>
+          <li class="menu__item">Entrar</li>
+          <li class="menu__item">
+            <a href="cadastro.html" class="menu__button">Cadastre-se</a>
+        </li>        
+        </ul>
+      </div>
     </div>
-    <div class="nav-btn">
-      <label for="nav-check">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-    </div> 
-    <div class="nav-links">
-      <a href="" class="btn">Buscar Vagas</a>
-      <a href="" class="btn">Anunciar Garagem</a>
-      <a href="" class="btn">Entrar</a>
-      <a href="" class="btn-pink">Cadastre-se</a>
+    
+    <div class="services">
+      <ul>
+        <li class="item">
+          <img src="./img/Gere renda.svg" alt="Ícone Gere Renda Extra">
+          <h4>Gere renda extra</h4>
+        </li>
+      
+        <li class="item">
+          <img src="./img/Encontre vagas Convenientes.svg" alt="Ícone vagas">
+          <h4>Encontre vagas<br>Convenientes</h4>
+        </li>
+      
+        <li class="item">
+          <img src="./img/Avalie sua Experiência.svg" alt="Ícone estrela para avaliação">
+          <h4>Avalie sua<br>Experiência</h4>
+        </li>
+
+      </ul>
     </div>
-  </div>
-</body>
+  
+    <div class="main">
+      <div class="main__center">
+        <h1>Encontre garagens<br>proxima a você</h1>
+        <div class="pesquisa">
+            <button type="button" class="info-button"><strong>Onde:</strong><br>Localização</button>
+            <button type="button" class="info-button"><strong>Check-in:</strong><br>Insira as datas</button>
+            <button type="button" class="info-button"><strong>Check-out:</strong><br>Insira as datas</button>
+        </div>    
+      
+      </div>
+
+    </div>
+    
+    <div class="spotlight">
+      <div class="spotlight__left">
+        <p>
+          <div><strong>Veja o que os usuários mais<br>gostaram:</strong></div>
+        </p>
+        <button>Leia todas as avaliações</button>
+      </div>
+      <div class="spotlight__right">
+        <img src="./img/Primeiro comentario.svg" alt="avaliação de cliente">
+        <img src="./img/segundo comentario.svg" alt="avaliação de cliente">
+        <img src="./img/terceiro comentario.svg" alt="avaliação de cliente">
+        <img src="./img/terceiro comentario.svg" alt="avaliação de cliente">
+      </div>
+    </div>
+    
+    <div class="slide">
+      <div class="slide__thumbnail">
+          <p><strong>Endereços que curtimos:</strong></p>
+      </div>
+          <div class="grid-container">
+              <img src="./img/avaliação1.svg" alt="Endereços melhor avaliado">
+              <img src="./img/Avaliação2.svg" alt="Endereços melhor avaliado">
+              <img src="./img/Avaliação3.svg" alt="Endereços melhor avaliado">
+              <img src="./img/Avaliação4.svg" alt="Endereços melhor avaliado">
+          </div>
+  </div>  
+    
+  <div class="banner">
+    <p>
+        A garashare é uma plataforma inovadora, criada para atender às necessidades do mundo moderno. Encontrar e<br>
+        compartilhar vagas em garagens nunca foi tão simples. Descubra uma nova maneira de resolver o problema de<br>
+        estacionamento com a gente. Vagas anunciadas por diversas pessoas, em diferentes localizações e com preços<br>
+        acessíveis. Junte-se a nós e faça parte dessa solução inteligente para a mobilidade urbana!
+    </p>
+    <a href="#" class="more-info-link">Exibir mais informações sobre Garashare</a>
+</div>
+
+
+    <div class="footer">
+      <div class="footer__columns">
+        <div class="footer__column">
+          <strong>Links</strong>
+          <ul>
+            <li>Cadastrar-se</li>
+            <li>Entrar</li>
+            <li>Buscar Vagas</li>
+            <li>Criar Anúncio</li>
+          </ul>
+      </div>
+      <div class="footer__column">
+        <strong>Contato</strong>
+        <ul>
+          <li>Email:<br>suportegarashare@garashare.com</li>
+          <li>Telefone: (11) 99999-9999</li>
+          <li>Endereço</li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <strong>Termos</strong>
+        <ul>
+          <li>Termos de Uso</li>
+          <li>Política de Privacidade</li>
+        </ul>
+      </div>
+    </div>
+  </div>  
+  </body>
 </html>
+
