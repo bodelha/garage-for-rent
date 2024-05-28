@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+        <div class="menu">
+          <div class="menu__container">
+            <img class="menu__logo" src="/garage-for-rent/img/logo barra nav.svg" alt="Logo">
+            <i class="menu__icon ion-navicon" id="icon"></i>
+            <ul class="menu__list">
+              <li class="menu__item">Buscar Vaga</li>
+              <li class="menu__item">Anunciar Garagem</li>
+              <li class="menu__item">Entrar</li>
+              <li class="menu__item">
+                <a href="cadastro.html" class="menu__button">Cadastre-se</a>
+            </li>          
+            </ul>
+          </div>
+        </div>
+        <form action="index.html" method="post" >
+            <hr class="divider">
+            <h1>Comece a encontrar ou compartilhar vagas de<br>garagem hoje</h1>
+        
+            <fieldset>
+              <legend><span class="text"></span>Informações pessoais</legend>
+              <label for="nome">Nome completo:</label>
+              <input type="text" id="nome" name="nome_usuario">
+        
+              <label for="telefone">Celular com DDD:</label>
+              <input type="tel" id="telefone" name="telefone_usuario">
+        
+              <label for="mail">E-mail:</label>
+              <input type="text" id="mail" name="mail_usuario">
+        
+        
+              <label for="senha">Senha:</label>
+              <input type="password" id="senha" name="senha_usuario">
+
+              <label for="confirme">Confirme sua senha:</label>
+              <input type="password" id="senha" name="senha_usuario">
+        
+            </fieldset>
+            <fieldset>
+              
+              <label>Qual o seu principal interesse?</label>
+              <input type="checkbox" id="locatario" onclick="myFunction()" value="eh_locatario" name="ehlocatario"><label class="light" for="locatario">Disponibilizar para aluguel</label><br>
+              <input type="checkbox" id="locador" value="eh_locador name="eh_locador"><label class="light" for="locador">Alugar</label>
+              <script>
+                var x = document.getElementById("motorista");
+                document.getElementById("p").addEventListener("wheel", myFunction);
+                
+                function myFunction() {
+                if(x.checked){
+                var t = document.createElement("LABEL");
+                var h = document.createTextNode("sorte");
+                t.appendChild(h);
+                document.getElementById("z").insertAfter(t,document.getElementById("locador"));
+                }
+                } 
+              </script>
+        
+            </fieldset>
+            <button type="submit">Cadastrar</button>
+            <div class="login">
+                <a href="login.html">Já possuo cadastro</a>
+            </div>
+          </form>
+</body>
+</html>
