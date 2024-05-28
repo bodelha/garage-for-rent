@@ -40,7 +40,7 @@ body::-webkit-scrollbar {
 .menu {
   grid-area: menu;
   height: 80px;
-  background: rgba(238, 238, 238, 0.9);
+  background: white;
   display: flex;
 }
 
@@ -54,7 +54,7 @@ body::-webkit-scrollbar {
 }
 
 .menu__icon {
-  color: #aaa;
+  color: white;
   font-size: 2em;
 }
 
@@ -129,7 +129,7 @@ body::-webkit-scrollbar {
   display: block;
   text-align: center;
   grid-area: services;
-  background: linear-gradient(135deg, #ddd 10%, #eee 100%);
+  background: linear-gradient(135deg, #f3f3f3 10%, #fff6f6 100%);
 }
 
 .services ul {
@@ -176,7 +176,7 @@ body::-webkit-scrollbar {
   max-width: 800px;
   padding: 1em;
   border-radius: 5px;
-  color: #eee;
+  color: white;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -270,7 +270,7 @@ body::-webkit-scrollbar {
 .slide {
   padding: 2.5em;
   grid-area: slide;
-  background: #eee;
+  background: linear-gradient(135deg, #f3f3f3 10%, #fff6f6 100%);
   display: flex;
   justify-content: center; /* Alinha todo o conteúdo ao centro horizontalmente */
   align-items: flex-start; /* Alinha o conteúdo ao topo */
@@ -290,8 +290,8 @@ body::-webkit-scrollbar {
   grid-template-rows: 1fr 1fr;
   align-items: center; /* Center the images vertically within their cells */
   justify-items: center; /* Center the images horizontally within their cells */
-  margin-right: 30em; 
-  margin-left: 30em; 
+  margin-right: 35em; 
+  margin-left: 35em; 
 }
 
 .grid-container img {
