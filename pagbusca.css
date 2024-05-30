@@ -200,12 +200,16 @@ input:focus {
 
 .show-more-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin: 20px 0;
+    text-align: center; /* Adicionado para garantir que o texto seja centralizado */
 }
 
 .show-more-container h2 {
-font-size: 14px;
+    font-size: 14px;
+    margin-bottom: 10px; /* Espaço entre o texto e o botão */
 }
 
 .show-more-container button {
@@ -219,3 +223,4 @@ font-size: 14px;
 .show-more-container button:hover {
     background-color: #f0f0f0;
 }
+
