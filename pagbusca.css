@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +8,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Barra de Navegação */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -91,7 +89,6 @@ body {
     text-decoration: underline;
 }
 
-/* Buscador */
 .search-container {
     display: flex;
     justify-content: center;
@@ -164,7 +161,6 @@ input:focus {
     box-shadow: 0 0 5px #FF85C1;
 }
 
-/* Botão de Filtros */
 .filter-container {
     display: flex;
     justify-content: right;
@@ -184,7 +180,6 @@ input:focus {
     background-color: #f0f0f0;
 }
 
-/* Lista de Garagens */
 .garage-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -203,7 +198,6 @@ input:focus {
     height: auto;
 }
 
-/* Botão Mostrar Mais */
 .show-more-container {
     display: flex;
     justify-content: center;
