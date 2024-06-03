@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar garagem</title>
+    <link rel="stylesheet" href="paganuncio.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="img/logofundobranco.png" alt="Logo Garashare"></div>
+        <div class="nav-links">
+            <button><img src="img/icons/ajuda.png" alt="Ajuda"></button>
+            <button class="multiline-button">Buscar<br>Vaga</button>
+            <button class="multiline-button">Anunciar<br>Garagem</button>
+            <button class="btn-entrar">Entrar</button>
+            <button class="btn-cadastrar">Cadastrar-se</button>
+        </div>
+    </nav>
+    <div class="search-container">
+        <div class="search-group">
+            <label for="location">Onde</label>
+            <span class="instruction">Digite a localização</span>
+            <input type="text" id="location" placeholder="">
+        </div>
+        <div class="search-group">
+            <label for="check-in">Check-in</label>
+            <span class="instruction">Insira as datas</span>
+            <input type="date" id="check-in">
+        </div>
+        <div class="search-group">
+            <label for="check-out">Check-out</label>
+            <span class="instruction">Insira as datas</span>
+            <input type="date" id="check-out">
+        </div>
+        <button type="submit" class="search-button">
+            <img src="img/lupa.png" alt="Buscar">
+        </button>
+    </div>
+        <div class="main-content">
+            <div class="header">
+                <h1>Título do Anúncio</h1>
+                <div class="buttons">
+                    <button>&#x2764; <br> Salvar</button>
+                    <button>&#x1F517; <br> Compartilhar</button>
+                </div>
+            </div>
+            <div class="image-grid">
+                <img src="img/garagem1.webp" alt="Imagem 1" class="large-image">
+                <img src="img/garagem1.webp" alt="Imagem 2">
+                <img src="img/garagem1.webp" alt="Imagem 3">
+            </div>
+        </div>
+        <div class="info-columns">
+            <div class="column-left">
+                <h3>Rio de Janeiro, Brasil</h3>
+                <div class="rating">
+                    <span>&#9733;4.8</span>
+                </div>
+                <div class="more-info">
+                    <p1>Saiba mais</p1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe itaque blanditiis, voluptatibus laudantium totam minus ratione molestiae pariatur voluptatem sed? Aspernatur suscipit dolorem.</p>
+                </div>
+                <div class="host-info">
+                    <img src="img/profile.jpg" alt="Foto de perfil">
+                    <div class="host-details">
+                        <p>Nome do Anfitrião</p>
+                        <p>Experiência na plataforma: 3 anos</p>
+                        <button>Conversar</button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="column-right">
+                <div class="price-box">
+                    <p>R$ 50 por noite</p>
+                    <button id="check-in-button">Check-in</button>
+                    <button id="check-out-button">Check-out</button>
+                    <button id="reserve-button">Reservar</button>
+                    <p>Total: R$ 150 (3 noites)</p>
+                </div>
+            </div>
+        </div>
+</body>       
+</html>
