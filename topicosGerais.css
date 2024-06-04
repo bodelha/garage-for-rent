@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:500');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all .5s;
+}
+
+body {
+  font-family: 'Quicksand', Helvetica;
+}
+
+body::-webkit-scrollbar {
+  width: 0px;
+  /* background: #F97794; */
+}
+
+.wrap {
+  margin-top: 0;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "menu menu" "main main" "services services" "spotlight spotlight" "slide slide" "banner banner" "footer footer";
+}
+
+@media screen and (min-width: 600px) {
+  .wrap {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-radius: 5px;
+    overflow: hidden;
+    grid-template-rows: 80px auto 400px 300px 400px 200px 100px;
+    grid-template-columns: 1fr repeat(2, 4fr) 1fr;
+    grid-template-areas: ". menu menu ." ". main main ." ". services services ." ". spotlight spotlight ." ". slide slide ." ". banner banner ." ". footer footer .";
+  }
+}
+
+.menu {
+  grid-area: menu;
+  height: 80px;
+  background: white;
+  display: flex;
+}
+
+.menu__container {
+  margin: auto;
+  width: 90%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu__icon {
+  color: white;
+  font-size: 2em;
+}
+
+@media screen and (min-width: 600px) {
+  .menu__icon {
+    display: none;
+  }
+}
+
+.menu__logo {
+  height: 60px;
+  width: auto;
+}
+
+.menu__list {
+  display: flex; /* Garante que os itens da lista sejam flexíveis */
+  align-items: center; /* Alinha verticalmente os itens no centro */
+}
+
+@media screen and (min-width: 600px) {
+  .menu__list {
+    display: inline-flex;
+  }
+}
+
+.menu__item {
+  list-style: none; /* Remove a lista padrão */
+  margin: 0 10px; /* Espaçamento entre os itens */
+  display: flex; /* Garante que os itens sejam flexíveis */
+  align-items: center; /* Alinha verticalmente no centro */
+  text-decoration: none;
+}
+
+.menu__link {
+    text-decoration: none;
+    color: inherit;
+}
+.footer {
+  grid-area: footer;
+  background: #F241C3;
+  text-align: left;
+  color: white;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+.footer__columns {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens façam wrap se necessário */
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.footer__column {
+  flex: 1 1 200px; /* Garante que as colunas sejam flexíveis e tenham um tamanho mínimo */
+  margin-right: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.footer__column strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  color: white;
+}
+
+.footer__column ul {
+  list-style: none;
+  padding: 0;
+  text-decoration: none;
+  color: white;
+}
+
+.footer__column ul li {
+  margin-bottom: 10px; /* Aumenta o espaçamento entre os itens */
+  font-size: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.menu__button {
+  background-color: #F272D0; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  border: none; /* Sem borda */
+  padding: 5px 10px; /* Reduzido o espaçamento interno 
+  text-align: center; /* Centraliza o texto */
+  text-decoration: none; /* Remove sublinhado */
+  display: inline-block; /* Display inline block */
+  font-size: 14px; /* Tamanho da fonte menor */
+  margin: 4px 2px; /* Margem */
+  cursor: pointer; /* Cursor de ponteiro */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: background-color 0.3s ease; /* Transição suave para mudanças de cor de fundo */
+}
+
+.menu__button:hover {
+  background-color: #F241C3; /* Cor de fundo ao passar o mouse */
+}
+
+
+.fixed {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .fixed {
+    position: fixed;
+    width: 80%;
+  }
+}
+
+.menu__link {
+    text-decoration: none;
+    color: inherit;
+    color: #F272D0;
+}
+
+.p {
+    color: #F272D0; /* Cor rosa */
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.p:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #F272D0;
+}
+
+.help-topic {
+    font-size: 24px;
+    font-weight: bold;
+    color: black; /* Cor preta */
+    margin-bottom: 10px;
+}
+
+.help-content {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Adicionando margem inferior para separar cada pergunta */
+.help-topic,
+.help-content {
+    margin-bottom: 20px;
+}
