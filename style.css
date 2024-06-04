@@ -35,6 +35,7 @@ body::-webkit-scrollbar {
     grid-template-columns: 1fr repeat(2, 4fr) 1fr;
     grid-template-areas: ". menu menu ." ". main main ." ". services services ." ". spotlight spotlight ." ". slide slide ." ". banner banner ." ". footer footer .";
   }
+
 }
 
 .menu {
@@ -315,6 +316,7 @@ body::-webkit-scrollbar {
       grid-column: span 1;
       grid-row: span 2;
   }
+
 }
 
 .slide {
@@ -461,6 +463,7 @@ body::-webkit-scrollbar {
 .pesquisa button:focus {
   outline: none;
 }
+
 
 
 

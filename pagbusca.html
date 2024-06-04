@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar garagem</title>
+    <link rel="stylesheet" href="pagbusca.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="img/logofundobranco.png" alt="Logo Garashare"></div>
+        <div class="nav-links">
+            <button><img src="img/icons/ajuda.png" alt="Ajuda"></button>
+            <button class="multiline-button">Buscar<br>Vaga</button>
+            <button class="multiline-button">Anunciar<br>Garagem</button>
+            <button class="btn-entrar">Entrar</button>
+            <button class="btn-cadastrar">Cadastrar-se</button>
+        </div>
+    </nav>
+    <div class="search-container">
+        <div class="search-group">
+            <label for="location">Onde</label>
+            <span class="instruction">Digite a localização</span>
+            <input type="text" id="location" placeholder="">
+        </div>
+        <div class="search-group">
+            <label for="check-in">Check-in</label>
+            <span class="instruction">Insira as datas</span>
+            <input type="date" id="check-in">
+        </div>
+        <div class="search-group">
+            <label for="check-out">Check-out</label>
+            <span class="instruction">Insira as datas</span>
+            <input type="date" id="check-out">
+        </div>
+        <button type="submit" class="search-button">
+            <img src="img/lupa.png" alt="Buscar">
+        </button>
+    </div>
+    <div class="filter-container">
+        <button>Filtros</button>
+    </div>
+    <div class="garage-list">
+        <div class="garage-item">
+            <img src="garage1.jpg" alt="Garage Image">
+            <p>Rio de Janeiro, Brasil</p>
+            <p>20 a 28 de Maio</p>
+            <p>R$100/noite</p>
+        </div>
+        <div class="garage-item">
+            <img src="garage2.jpg" alt="Garage Image">
+            <p>São Paulo, Brasil</p>
+            <p>15 a 22 de Junho</p>
+            <p>R$150/noite</p>
+        </div>
+        <div class="garage-item">
+            <img src="garagem3.jpg" alt="Garagem">
+            <p>Rio de Janeiro, Brasil</p>
+            <p>20 a 28 de Maio</p>
+            <p>R$100/noite</p>
+        </div>
+        <div class="garage-item">
+            <img src="garagem4.jpg" alt="Garagem">
+            <p>São Paulo, Brasil</p>
+            <p>15 a 22 de Junho</p>
+            <p>R$150/noite</p>
+        </div>
+        <div class="garage-item">
+            <img src="garagem5.jpg" alt="Garagem">
+            <p>Rio de Janeiro, Brasil</p>
+            <p>20 a 28 de Maio</p>
+            <p>R$100/noite</p>
+        </div>
+        <div class="garage-item">
+            <img src="garagem6.jpg" alt="Garagem">
+            <p>São Paulo, Brasil</p>
+            <p>15 a 22 de Junho</p>
+            <p>R$150/noite</p>
+    </div>
+    </div>
+    <div class="show-more-container">
+    <h2>Continue navegando na categoria Buscar Vaga</h2>
+    <button>Mostrar Mais</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    position: relative; /*linha*/
+    border-bottom: 1px solid #ccc;
+}
+
+.navbar .logo img {
+    height: 40px;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+.navbar .nav-links button {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.navbar .nav-links button img{
+    height: 30px;
+    vertical-align: middle;
+}
+
+.navbar .nav-links .multiline-button {
+    white-space: pre-wrap;
+    text-align: center;
+}
+
+.navbar .nav-links .btn-entrar::before{   /*linha */
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 30px;
+    background-color: #ccc;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+
+.navbar .nav-links .btn-entrar {
+    background: none;
+    border: none;
+    color: #F970AE; 
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center; 
+}
+
+.navbar .nav-links .btn-entrar:hover {
+    text-decoration: underline;
+}
+
+
+.navbar .nav-links .btn-cadastrar {
+    background-color: #F970AE; 
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 25px; 
+    text-align: center; 
+}
+
+.navbar .nav-links .btn-cadastrar:hover {
+    background-color: #FF85C1; 
+}
+
+.navbar .nav-links button:hover {
+    text-decoration: underline;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto; 
+    background-color: #f970ae;
+    border-radius: 100px; 
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    max-width: 600px; 
+}
+
+.search-group {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.search-group label {
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: white; 
+}
+
+.search-group .instruction {
+    font-size: 12px;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.search-group input {
+    padding: 8px;
+    font-size: 14px;
+    border: none;
+    background-color: white; 
+    border-radius: 5px;
+    margin-top: 4px;
+}
+
+.search-button {
+    background-color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    transition: background-color 0.3s ease;
+    margin-left: 10px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.search-button img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.search-button:hover {
+    background-color: #f0f0f0;
+}
+
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 5px #FF85C1;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 20px;
+    margin-right: 50px;
+}
+
+.filter-container button {
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    border: 1px solid #333;
+    background-color: white;
+}
+
+.filter-container button:hover {
+    background-color: #f0f0f0;
+}
+
+.garage-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.garage-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.garage-item img {
+    width: 100%;
+    height: auto;
+}
+
+.show-more-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    text-align: center; /* Adicionado para garantir que o texto seja centralizado */
+}
+
+.show-more-container h2 {
+    font-size: 14px;
+    margin-bottom: 10px; /* Espaço entre o texto e o botão */
+}
+
+.show-more-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #333;
+    background-color: white;
+}
+
+.show-more-container button:hover {
+    background-color: #f0f0f0;
+}
+
