@@ -85,6 +85,56 @@ body::-webkit-scrollbar {
   margin: 0 10px; /* Espaçamento entre os itens */
   display: flex; /* Garante que os itens sejam flexíveis */
   align-items: center; /* Alinha verticalmente no centro */
+  text-decoration: none;
+}
+
+.menu__link {
+    text-decoration: none;
+    color: inherit;
+}
+.footer {
+  grid-area: footer;
+  background: #F241C3;
+  text-align: left;
+  color: white;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+.footer__columns {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens façam wrap se necessário */
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.footer__column {
+  flex: 1 1 200px; /* Garante que as colunas sejam flexíveis e tenham um tamanho mínimo */
+  margin-right: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.footer__column strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  color: white;
+}
+
+.footer__column ul {
+  list-style: none;
+  padding: 0;
+  text-decoration: none;
+  color: white;
+}
+
+.footer__column ul li {
+  margin-bottom: 10px; /* Aumenta o espaçamento entre os itens */
+  font-size: 10px;
+  text-decoration: none;
+  color: white;
 }
 
 .menu__button {
