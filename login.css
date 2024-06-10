@@ -1,30 +1,25 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300');
 @import url('https://fonts.googleapis.com/css?family=Quicksand:500');
 
-* {
-  margin: 0;
-  padding: 0;
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  transition: all .5s;
+  text-decoration: none;
+  color: black;
 }
 
 body {
-  background: #F241C3; /* fallback for old browsers */
-  background: rgb(194, 111, 153);
-  background: linear-gradient(90deg, rgba(194,111,153) 0%, rgb(184, 82, 159) 50%);
-  font-family: 'Roboto', 'Quicksand', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  font-family: 'Quicksand', Helvetica;
 }
 
 body::-webkit-scrollbar {
   width: 0px;
-  /* background: #F97794; */
 }
 
 .login-page {
   width: 360px;
-  padding: 8% 0 0;
+  padding: 3% 0 0;
   margin: auto;
 }
 
@@ -55,7 +50,7 @@ body::-webkit-scrollbar {
   font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #F272D0;
+  background: #f970ae;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -68,7 +63,7 @@ body::-webkit-scrollbar {
 }
 
 .form button:hover, .form button:active, .form button:focus {
-  background: #F241C3;
+  background: #ff85c1;
 }
 
 .form .message {
@@ -78,7 +73,7 @@ body::-webkit-scrollbar {
 }
 
 .form .message a {
-  color: #F241C3;
+  color: #f970ae;
   text-decoration: none;
 }
 
@@ -92,7 +87,7 @@ body::-webkit-scrollbar {
     display: block;
     margin-top: -10px;
     margin-bottom: 15px;
-    color: #F241C3;
+    color: #f970ae;
     text-decoration: none;
 }
 .container {
@@ -122,7 +117,7 @@ body::-webkit-scrollbar {
 }
 
 .container .info span {
-  color: #F241C3;
+  color: #f970ae;
   font-size: 12px;
 }
 
@@ -135,9 +130,6 @@ body::-webkit-scrollbar {
   color: #EF3B3A;
 }
 
-body {
-  background-image: linear-gradient(135deg, #F97794 10%, #623AA2 100%);
-}
 
 .wrap {
   margin-top: 0;
@@ -187,13 +179,13 @@ body {
 }
 
 .menu__logo {
-  height: 60px;
+  height: 40px;
   width: auto;
 }
 
 .menu__list {
-  display: flex; /* Garante que os itens da lista sejam flexíveis */
-  align-items: center; /* Alinha verticalmente os itens no centro */
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (min-width: 600px) {
@@ -203,10 +195,10 @@ body {
 }
 
 .menu__item {
-  list-style: none; /* Remove a lista padrão */
-  margin: 0 10px; /* Espaçamento entre os itens */
-  display: flex; /* Garante que os itens sejam flexíveis */
-  align-items: center; /* Alinha verticalmente no centro */
+  list-style: none; 
+  margin: 0 10px; 
+  display: flex;
+  align-items: center; 
   text-decoration: none;
 }
 
@@ -217,22 +209,22 @@ body {
 
 
 .menu__button {
-  background-color: #F272D0; /* Cor de fundo */
-  color: white; /* Cor do texto */
-  border: none; /* Sem borda */
-  padding: 5px 10px; /* Reduzido o espaçamento interno */
-  text-align: center; /* Centraliza o texto */
-  text-decoration: none; /* Remove sublinhado */
-  display: inline-block; /* Display inline block */
-  font-size: 14px; /* Tamanho da fonte menor */
-  margin: 4px 2px; /* Margem */
-  cursor: pointer; /* Cursor de ponteiro */
-  border-radius: 5px; /* Bordas arredondadas */
-  transition: background-color 0.3s ease; /* Transição suave para mudanças de cor de fundo */
+  background-color: #f970ae; 
+  color: white; 
+  border: none; 
+  padding: 5px 10px; 
+  text-align: center; 
+  text-decoration: none; 
+  display: inline-block; 
+  font-size: 14px; 
+  margin: 4px 2px;
+  cursor: pointer; 
+  border-radius: 5px; 
+  transition: background-color 0.3s ease; 
 }
 
 .menu__button:hover {
-  background-color: #F241C3; /* Cor de fundo ao passar o mouse */
+  background-color: #ff85c1; 
 }
 
 .fixed {
@@ -254,7 +246,7 @@ body {
 
 .footer {
   grid-area: footer;
-  background: #F241C3;
+  background: #f970ae;
   text-align: left;
   color: white;
   padding: 20px 20px;
@@ -263,13 +255,13 @@ body {
 
 .footer__columns {
   display: flex;
-  flex-wrap: wrap; /* Permite que os itens façam wrap se necessário */
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
 .footer__column {
-  flex: 1 1 200px; /* Garante que as colunas sejam flexíveis e tenham um tamanho mínimo */
+  flex: 1 1 200px;
   margin-right: 20px;
   text-decoration: none;
   color: white;
@@ -278,7 +270,7 @@ body {
 .footer__column strong {
   display: block;
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
   color: white;
 }
@@ -291,8 +283,8 @@ body {
 }
 
 .footer__column ul li {
-  margin-bottom: 10px; /* Aumenta o espaçamento entre os itens */
-  font-size: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
   text-decoration: none;
   color: white;
 }
