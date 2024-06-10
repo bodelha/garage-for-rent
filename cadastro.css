@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:500|Roboto:400,500');
+
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   text-decoration: none;
-  color: black
+  color: black;
 }
 
 body {
@@ -38,13 +40,13 @@ body {
 }
 
 .menu__logo {
-  height: 60px;
+  height: 40px;
   width: auto;
 }
 
 .menu__list {
-  display: flex; /* Garante que os itens da lista sejam flexíveis */
-  align-items: center; /* Alinha verticalmente os itens no centro */
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (min-width: 600px) {
@@ -54,10 +56,10 @@ body {
 }
 
 .menu__item {
-  list-style: none; /* Remove a lista padrão */
-  margin: 0 10px; /* Espaçamento entre os itens */
-  display: flex; /* Garante que os itens sejam flexíveis */
-  align-items: center; /* Alinha verticalmente no centro */
+  list-style: none;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
   text-decoration: none;
 }
 
@@ -66,24 +68,23 @@ body {
   color: inherit;
 }
 
-
 .menu__button {
-  background-color: #F272D0; /* Cor de fundo */
-  color: white; /* Cor do texto */
-  border: none; /* Sem borda */
-  padding: 5px 10px; /* Reduzido o espaçamento interno 
-  text-align: center; /* Centraliza o texto */
-  text-decoration: none; /* Remove sublinhado */
-  display: inline-block; /* Display inline block */
-  font-size: 14px; /* Tamanho da fonte menor */
-  margin: 4px 2px; /* Margem */
-  cursor: pointer; /* Cursor de ponteiro */
-  border-radius: 5px; /* Bordas arredondadas */
-  transition: background-color 0.3s ease; /* Transição suave para mudanças de cor de fundo */
+  background-color: #f970ae;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .menu__button:hover {
-  background-color: #F241C3; /* Cor de fundo ao passar o mouse */
+  background-color: #ff85c1;
 }
 
 .fixed {
@@ -106,7 +107,7 @@ body {
 .divider {
   border: 20px;
   height: 1px;
-  background: #F272D0;
+  background: #f970ae;
   margin: 20px 20px;
 }
 
@@ -124,13 +125,13 @@ h1 {
 
 input[type="text"],
 input[type="password"],
-input[type="password"],
 input[type="email"],
 input[type="tel"],
 textarea,
 select {
   background: rgba(255,255,255,0.1);
   border: none;
+  font-family: 'Roboto', sans-serif;
   font-size: 12px;
   height: auto;
   margin: 0;
@@ -145,9 +146,8 @@ select {
 input[type="radio"],
 input[type="checkbox"] {
   margin: 0 4px 8px 0;
-  border-color: #F272D0; /* Define a cor da borda da checkbox */
+  border-color: #f970ae;
 }
-
 
 select {
   padding: 6px;
@@ -155,19 +155,21 @@ select {
   border-radius: 2px;
 }
 
-button{
-  padding: 19px 39px 18px 39px;
+button {
+  font-family: 'Roboto', sans-serif;
+  padding: 10px 20px;
+  font-size: 16px;
   color: #FFF;
-  background-color: #F241C3;
-  font-size: 18px;
+  background-color: #f970ae;
   text-align: center;
   font-style: normal;
   border-radius: 5px;
-  width: 100%;
-  border: 1px solid #F241C3;
+  width: auto;
+  border: 1px solid #f970ae;
   border-width: 1px 1px 3px;
   box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
-  margin-bottom: 10px;
+  margin: 10px auto;
+  display: block;
 }
 
 fieldset {
@@ -176,8 +178,9 @@ fieldset {
 }
 
 legend {
-  font-size: 1.4em;
+  font-size: 1.2em;
   margin-bottom: 10px;
+  margin-left: 0;
 }
 
 label {
@@ -190,18 +193,15 @@ label.light {
   display: inline;
 }
 
-
 @media screen and (min-width: 480px) {
-
-form {
+  form {
     max-width: 480px;
   }
-
 }
 
 .footer {
   grid-area: footer;
-  background: #F241C3;
+  background: #f970ae;
   text-align: left;
   color: white;
   padding: 20px 20px;
@@ -210,13 +210,13 @@ form {
 
 .footer__columns {
   display: flex;
-  flex-wrap: wrap; /* Permite que os itens façam wrap se necessário */
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
 .footer__column {
-  flex: 1 1 200px; /* Garante que as colunas sejam flexíveis e tenham um tamanho mínimo */
+  flex: 1 1 200px;
   margin-right: 20px;
   text-decoration: none;
   color: white;
@@ -225,7 +225,7 @@ form {
 .footer__column strong {
   display: block;
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
   color: white;
 }
@@ -238,8 +238,13 @@ form {
 }
 
 .footer__column ul li {
-  margin-bottom: 10px; /* Aumenta o espaçamento entre os itens */
-  font-size: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
   text-decoration: none;
   color: white;
+}
+
+.login {
+  margin-bottom: 40px;
+  text-align: center;
 }
