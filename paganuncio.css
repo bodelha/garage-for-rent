@@ -219,7 +219,8 @@ input:focus {
 .info-columns {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .column-left, .column-right {
@@ -237,10 +238,52 @@ input:focus {
 }
 
 .price-box {
-    background-color: #f0f0f0;
+    padding: 5px;
+    margin-top: 80px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: white;
     padding: 10px;
     border-radius: 5px;
+    border: 2px solid #f970ae; 
+    align-items: center;
+    text-align: center;
 }
+
+.price-box button,
+.host-info button {
+    background-color: #f970ae;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.price-box button:hover,
+.host-info button:hover {
+    background-color: #ff85c1;
+}
+
+.host-info button {
+    background-color: transparent;
+    border: 1px solid #f970ae;
+    color: #f970ae;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.host-info button:hover {
+    background-color: #f970ae;
+    color: white;
+    border-color: #f970ae;
+}
+
 
 .host-info {
     display: flex;
@@ -265,4 +308,80 @@ input:focus {
 
 .more-info p1 {
     font-weight: bold;
+}
+
+.ratingII {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    text-align: center;
+}
+
+.ratingII span {
+    font-size: 4em; 
+}
+
+
+.reviews-section {
+    max-width: 550px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.reviews-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.review {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.review img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.review-details {
+    flex: 1;
+}
+
+.reviewer-name {
+    font-weight: bold;
+}
+
+.review-rating {
+    margin-top: 5px;
+}
+
+.review-rating span {
+    font-size: 1.5em;
+}
+
+.review-comment {
+    margin-top: 10px;
+}
+
+.show-more-button {
+    display: block;
+    margin: 0 auto;
+    background-color: #f970ae;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.show-more-button:hover {
+    background-color: #ff85c1;
 }
