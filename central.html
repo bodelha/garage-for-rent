@@ -1,30 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central de ajuda</title>
-    <link rel="stylesheet" href="central.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:500|Roboto:400,500" type="text/css">
     <link rel="shortcut icon" href="img/favicongarashare.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Quicksand:500|Roboto:400,500');
+
+        *,
+        *:before,
+        *:after {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            text-decoration: none;
+            color: black;
+        }
+
+        body {
+            font-family: 'Quicksand', Helvetica;
+        }
+
+        .menu {
+            grid-area: menu;
+            height: 80px;
+            background: white;
+            display: flex;
+        }
+
+        .menu__container {
+            margin: auto;
+            width: 90%;
+            height: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu__icon {
+            color: white;
+            font-size: 2em;
+        }
+
+        @media screen and (min-width: 600px) {
+            .menu__icon {
+                display: none;
+            }
+        }
+
+        .menu__logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .menu__list {
+            display: flex;
+            align-items: center;
+        }
+
+        @media screen and (min-width: 600px) {
+            .menu__list {
+                display: inline-flex;
+            }
+        }
+
+        .menu__item {
+            list-style: none;
+            margin: 0 10px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .menu__link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .menu__button {
+            background-color: #f970ae;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu__button:hover {
+            background-color: #ff85c1;
+        }
+
+
+        .fixed {
+            position: fixed;
+            width: 100%;
+            height: 80px;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        @media screen and (min-width: 600px) {
+            .fixed {
+                position: fixed;
+                width: 80%;
+            }
+        }
+
+        .help-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 80px;
+        }
+
+        .help-title {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .topics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .topics .topic {
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: left;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .topics .topic h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .topics .topic p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .topics .topic a {
+            font-size: 12px;
+            color: #f970ae;
+            text-decoration: none;
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background: #f970ae;
+            text-align: left;
+            color: white;
+            padding: 20px 20px;
+            text-decoration: none;
+        }
+
+        .footer__columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .footer__column {
+            flex: 1 1 200px;
+            margin-right: 20px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer__column strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer__column ul {
+            list-style: none;
+            padding: 0;
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer__column ul li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+        }
+    </style>
 </head>
+
 <body class="align">
     <div class="menu">
         <div class="menu__container">
-            <a href="/garage-for-rent/index.html">
+            <a href="index.html">
                 <img class="menu__logo" src="img/logofundobranco.png" alt="Logo">
             </a>
-          <i class="menu__icon ion-navicon" id="icon"></i>
-          <ul class="menu__list">
-            <li class="menu__item">Buscar Vaga</li>
-            <li class="menu__item">Anunciar Garagem</li>
-            <li class="menu__item">
-                <a href="login.html" class="menu__link">Entrar</a>
-            </li>
-            <li class="menu__item">
-              <a href="cadastro.html" class="menu__button">Cadastre-se</a>
-            </li>          
-          </ul>
+            <i class="menu__icon ion-navicon" id="icon"></i>
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a href="pagbusca.html" class="menu__link">Buscar Vaga</a>
+                </li>
+                <li class="menu__item">
+                    <a href="criar-anuncio.html" class="menu__link">Anunciar Garagem</a>
+                </li>
+                <li class="menu__item">
+                    <a href="login.html" class="menu__link">Entrar</a>
+                </li>
+                <li class="menu__item">
+                    <a href="cadastro.html" class="menu__button">Cadastre-se</a>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="help-center">
@@ -32,7 +244,8 @@
         <div class="topics">
             <div class="topic">
                 <h3>Tópicos gerais</h3>
-                <p>Como funciona o site,<br>Perguntas frequentes,<br>Informações sobre nossa politica de privacidade e termos de uso.
+                <p>Como funciona o site,<br>Perguntas frequentes,<br>Informações sobre nossa politica de privacidade e
+                    termos de uso.
                 </p>
                 <a href="topicosGerais.html">Saiba mais</a>
             </div>
@@ -43,45 +256,45 @@
             </div>
             <div class="topic">
                 <h3>Para locatários</h3>
-                <p>Como encontrar a garagem ideal,<br>Dicas para uma experiência de reserva bem-sucedida,<br>Como deixar avaliações e políticas de cancelamento.</p>
+                <p>Como encontrar a garagem ideal,<br>Dicas para uma experiência de reserva bem-sucedida,<br>Como deixar
+                    avaliações e políticas de cancelamento.</p>
                 <a href="paraLocatarios.html">Saiba mais</a>
             </div>
             <div class="topic">
                 <h3>Configurações gerais</h3>
-                <p>Como configurar e personalizar o perfil,<br>Gerenciar notificações por e-mail e segurança da conta.</p>
+                <p>Como configurar e personalizar o perfil,<br>Gerenciar notificações por e-mail e segurança da conta.
+                </p>
                 <a href="configuracoesGerais.html">Saiba mais</a>
             </div>
         </div>
     </div>
-        <div class="footer">
-            <div class="footer__columns">
-                <div class="footer__column">
-                    <strong>Links</strong>
-                    <ul>
-                        <li>Cadastrar-se</li>
-                        <li>Buscar Vagas</li>
-                        <li>Criar Anúncio</li>
-                        <li>
-                            <a href="#" class="footer__column">Central de ajuda</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer__column">
-                    <strong>Contato</strong>
-                    <ul>
-                        <li>Email:<br>suportegarashare@garashare.com</li>
-                        <li>Telefone: (11) 99999-9999</li>
-                        <li>Endereço</li>
-                    </ul>
-                </div>
-                <div class="footer__column">
-                    <strong>Termos</strong>
-                    <ul>
-                        <li>Termos de Uso</li>
-                        <li>Política de Privacidade</li>
-                    </ul>
-                </div>
+    <div class="footer">
+        <div class="footer__columns">
+            <div class="footer__column">
+                <strong>Links</strong>
+                <ul>
+                    <li><a href="cadastro.html" class="footer__column">Cadastrar-se</a></li>
+                    <li><a href="pagbusca.html" class="footer__column">Buscar Vagas</a></li>
+                    <li><a href="criar-anuncio.html" class="footer__column">Criar Anúncio</a></li>
+                    <li><a href="central.html" class="footer__column">Central de ajuda</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <strong>Contato</strong>
+                <ul>
+                    <li>Email:<br>suportegarashare@garashare.com</li>
+                    <li>Telefone: (11) 99999-9999</li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <strong>Termos</strong>
+                <ul>
+                    <li><a href="termos.html" class="footer__column">Termos de Uso</a></li>
+                    <li><a href="politica.html" class="footer__column">Política de Privacidade</a></li>
+                </ul>
             </div>
         </div>
+    </div>
 </body>
+
 </html>
