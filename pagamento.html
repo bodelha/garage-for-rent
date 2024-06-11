@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento de Reserva</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:500|Roboto:400,500" type="text/css">
+    <link rel="shortcut icon" href="img/favicongarashare.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Quicksand:500|Roboto:400,500');
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    font-family: 'Quicksand', Helvetica;
+}
+
+.menu {
+    grid-area: menu;
+    height: 80px;
+    background: white;
+    display: flex;
+  }
+  
+  .menu__container {
+    margin: auto;
+    width: 90%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu__icon {
+    color: white;
+    font-size: 2em;
+  }
+  
+  @media screen and (min-width: 600px) {
+    .menu__icon {
+      display: none;
+    }
+  }
+  
+  .menu__logo {
+    height: 40px;
+    width: auto;
+  }
+  
+  .menu__list {
+    display: flex;
+    align-items: center;
+  }
+  
+  @media screen and (min-width: 600px) {
+    .menu__list {
+      display: inline-flex;
+    }
+  }
+  
+  .menu__item {
+    list-style: none;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .menu__link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .menu__button {
+    background-color: #f970ae;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu__button:hover {
+    background-color: #ff85c1;
+  }
+
+        .main-content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .payment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .form-group input, 
+        .form-group select {
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus {
+            outline: none;
+            border-color: #f970ae;
+            box-shadow: 0 0 5px #f970ae;
+        }
+
+        .payment-method {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .payment-method label {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .payment-method select {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .pix-details, .card-details {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .pix-details img {
+            max-width: 150px;
+            align-self: center;
+        }
+
+        .submit-button {
+            background-color: #f970ae;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .submit-button:hover {
+            background-color: #ff85c1;
+        }
+
+        .footer {
+    grid-area: footer;
+    background: #f970ae;
+    text-align: left;
+    color: white;
+    padding: 20px 20px;
+    text-decoration: none;
+  }
+  
+  .footer__columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .footer__column {
+    flex: 1 1 200px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .footer__column strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .footer__column ul {
+    list-style: none;
+    padding: 0;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .footer__column ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+  }
+
+    </style>
+    <script>
+        function showPaymentDetails() {
+            const paymentMethod = document.getElementById('payment-method').value;
+            const pixDetails = document.querySelector('.pix-details');
+            const cardDetails = document.querySelector('.card-details');
+
+            if (paymentMethod === 'pix') {
+                pixDetails.style.display = 'flex';
+                cardDetails.style.display = 'none';
+            } else if (paymentMethod === 'card') {
+                pixDetails.style.display = 'none';
+                cardDetails.style.display = 'flex';
+            } else {
+                pixDetails.style.display = 'none';
+                cardDetails.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="menu">
+        <div class="menu__container">
+            <a href="/garage-for-rent/index.html">
+                <img class="menu__logo" src="img/logofundobranco.png" alt="Logo">
+            </a>
+            <i class="menu__icon ion-navicon" id="icon"></i>
+            <ul class="menu__list">
+                <li class="menu__item">Buscar Vaga</li>
+                <li class="menu__item">Anunciar Garagem</li>
+                <li class="menu__item">
+                    <a href="login.html" class="menu__link">Entrar</a>
+                </li>
+                <li class="menu__item">
+                    <a href="cadastro.html" class="menu__button">Cadastre-se</a>
+                </li>          
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Pagamento de Reserva</h1>
+        </div>
+        <form class="payment-form">
+            <div class="form-group">
+                <label for="garage">Garagem Escolhida:</label>
+                <input type="text" id="garage" name="garage" value="Nome da Garagem" readonly>
+            </div>
+            <div class="form-group">
+                <label for="checkin">Data de Check-in:</label>
+                <input type="text" id="checkin" name="checkin" value="10/06/2024" readonly>
+            </div>
+            <div class="form-group">
+                <label for="checkout">Data de Check-out:</label>
+                <input type="text" id="checkout" name="checkout" value="15/06/2024" readonly>
+            </div>
+            <div class="form-group">
+                <label for="nights">Número de Noites:</label>
+                <input type="text" id="nights" name="nights" value="5" readonly>
+            </div>
+            <div class="form-group">
+                <label for="price">Preço por Noite (R$):</label>
+                <input type="text" id="price" name="price" value="100" readonly>
+            </div>
+            <div class="form-group">
+                <label for="total">Total (R$):</label>
+                <input type="text" id="total" name="total" value="500" readonly>
+            </div>
+            <div class="payment-method">
+                <label for="payment-method">Selecione a Forma de Pagamento:</label>
+                <select id="payment-method" name="payment-method" onchange="showPaymentDetails()">
+                    <option value="" selected disabled>Escolha...</option>
+                    <option value="pix">PIX</option>
+                    <option value="card">Cartão</option>
+                </select>
+            </div>
+            <div class="pix-details">
+                <label>Detalhes do PIX:</label>
+                <img src="img/qrcodepix.png" alt="QR Code do PIX">
+                <p>Chave PIX: 12345678900</p>
+            </div>
+            <div class="card-details">
+                <div class="form-group">
+                    <label for="card-name">Nome no Cartão:</label>
+                    <input type="text" id="card-name" name="card-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="card-number">Número do Cartão:</label>
+                    <input type="text" id="card-number" name="card-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiry-date">Data de Validade:</label>
+                    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/AA" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required>
+                </div>
+            </div>
+            <button type="submit" class="submit-button">Confirmar Pagamento</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <div class="footer__columns">
+            <div class="footer__column">
+                <strong>Links</strong>
+                <ul>
+                    <li>Cadastrar-se</li>
+                    <li>Buscar Vagas</li>
+                    <li>Criar Anúncio</li>
+                    <li>
+                        <a href="#" class="footer__column">Central de ajuda</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <strong>Contato</strong>
+                <ul>
+                    <li>Email:<br>suportegarashare@garashare.com</li>
+                    <li>Telefone: (11) 99999-9999</li>
+                    <li>Endereço</li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <strong>Termos</strong>
+                <ul>
+                    <li>Termos de Uso</li>
+                    <li>Política de Privacidade</li>
+                </ul>
+            </div>
+        </div>
+    </div>   
+</div>
+</body>
+</html>
