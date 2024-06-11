@@ -1,29 +1,313 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar garagem</title>
-    <link rel="stylesheet" href="pagbusca.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:500|Roboto:400,500" type="text/css">
     <link rel="shortcut icon" href="img/favicongarashare.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Quicksand:500|Roboto:400,500');
+
+        *,
+        *:before,
+        *:after {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            text-decoration: none;
+            color: black;
+        }
+
+        body {
+            font-family: 'Quicksand', Helvetica;
+        }
+
+        .menu {
+            grid-area: menu;
+            height: 80px;
+            background: white;
+            display: flex;
+        }
+
+        .menu__container {
+            margin: auto;
+            width: 90%;
+            height: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu__icon {
+            color: white;
+            font-size: 2em;
+        }
+
+        @media screen and (min-width: 600px) {
+            .menu__icon {
+                display: none;
+            }
+        }
+
+        .menu__logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .menu__list {
+            display: flex;
+            align-items: center;
+        }
+
+        @media screen and (min-width: 600px) {
+            .menu__list {
+                display: inline-flex;
+            }
+        }
+
+        .menu__item {
+            list-style: none;
+            margin: 0 10px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .menu__link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .menu__button {
+            background-color: #f970ae;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu__button:hover {
+            background-color: #ff85c1;
+        }
+
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            background-color: #f970ae;
+            border-radius: 100px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+
+        .search-group {
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+        }
+
+        .search-group label {
+            font-size: 14px;
+            margin-bottom: 4px;
+            color: white;
+        }
+
+        .search-group .instruction {
+            font-size: 12px;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .search-group input {
+            padding: 8px;
+            font-size: 14px;
+            border: none;
+            background-color: white;
+            border-radius: 5px;
+            margin-top: 4px;
+        }
+
+        .search-button {
+            background-color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            transition: background-color 0.3s ease;
+            margin-left: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-button img {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .search-button:hover {
+            background-color: #f0f0f0;
+        }
+
+
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 5px #FF85C1;
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: right;
+            margin-bottom: 20px;
+            margin-right: 100px;
+        }
+
+        .filter-container button {
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            border: 1px solid #333;
+            background-color: white;
+        }
+
+        .filter-container button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .garage-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 0 20px;
+            margin-left: 275px;
+            margin-right: 275px;
+        }
+
+        .garage-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .garage-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .show-more-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .show-more-container h2 {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .show-more-container button {
+            display: block;
+            margin: 0 auto;
+            background-color: #f970ae;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .show-more-container button:hover {
+            background-color: #ff85c1;
+        }
+
+        .footer {
+            grid-area: footer;
+            background: #f970ae;
+            text-align: left;
+            color: white;
+            padding: 20px 20px;
+            text-decoration: none;
+        }
+
+        .footer__columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .footer__column {
+            flex: 1 1 200px;
+            margin-right: 20px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer__column strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer__column ul {
+            list-style: none;
+            padding: 0;
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer__column ul li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
     <div class="menu">
         <div class="menu__container">
-            <a href="/garage-for-rent/index.html">
+            <a href="index.html">
                 <img class="menu__logo" src="img/logofundobranco.png" alt="Logo">
             </a>
             <i class="menu__icon ion-navicon" id="icon"></i>
             <ul class="menu__list">
-                <li class="menu__item">Buscar Vaga</li>
-                <li class="menu__item">Anunciar Garagem</li>
+                <li class="menu__item">
+                    <a href="pagbusca.html" class="menu__link">Buscar Vaga</a>
+                </li>
+                <li class="menu__item">
+                    <a href="criar-anuncio.html" class="menu__link">Anunciar Garagem</a>
+                </li>
                 <li class="menu__item">
                     <a href="login.html" class="menu__link">Entrar</a>
                 </li>
                 <li class="menu__item">
                     <a href="cadastro.html" class="menu__button">Cadastre-se</a>
-                </li>          
+                </li>
             </ul>
         </div>
     </div>
@@ -86,23 +370,21 @@
             <p>São Paulo, Brasil</p>
             <p>15 a 22 de Junho</p>
             <p>R$150/noite</p>
-    </div>
+        </div>
     </div>
     <div class="show-more-container">
-    <h2>Continue navegando na categoria Buscar Vaga</h2>
-    <button>Mostrar Mais</button>
+        <h2>Continue navegando na categoria Buscar Vaga</h2>
+        <button>Mostrar Mais</button>
     </div>
     <div class="footer">
         <div class="footer__columns">
             <div class="footer__column">
                 <strong>Links</strong>
                 <ul>
-                    <li>Cadastrar-se</li>
-                    <li>Buscar Vagas</li>
-                    <li>Criar Anúncio</li>
-                    <li>
-                        <a href="#" class="footer__column">Central de ajuda</a>
-                    </li>
+                    <li><a href="cadastro.html" class="footer__column">Cadastrar-se</a></li>
+                    <li><a href="pagbusca.html" class="footer__column">Buscar Vagas</a></li>
+                    <li><a href="criar-anuncio.html" class="footer__column">Criar Anúncio</a></li>
+                    <li><a href="central.html" class="footer__column">Central de ajuda</a></li>
                 </ul>
             </div>
             <div class="footer__column">
@@ -110,17 +392,17 @@
                 <ul>
                     <li>Email:<br>suportegarashare@garashare.com</li>
                     <li>Telefone: (11) 99999-9999</li>
-                    <li>Endereço</li>
                 </ul>
             </div>
             <div class="footer__column">
                 <strong>Termos</strong>
                 <ul>
-                    <li>Termos de Uso</li>
-                    <li>Política de Privacidade</li>
+                    <li><a href="termos.html" class="footer__column">Termos de Uso</a></li>
+                    <li><a href="politica.html" class="footer__column">Política de Privacidade</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </body>
+
 </html>
