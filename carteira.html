@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Carteira</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:500|Roboto:400,500" type="text/css">
+    <link rel="shortcut icon" href="img/favicongarashare.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Quicksand:500|Roboto:400,500');
+
+        *,
+        *:before,
+        *:after {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            text-decoration: none;
+            color: black;
+        }
+
+        body {
+            font-family: 'Quicksand', Helvetica;
+        }
+
+        .menu {
+            grid-area: menu;
+            height: 80px;
+            background: white;
+            display: flex;
+        }
+
+        .menu__container {
+            margin: auto;
+            width: 90%;
+            height: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu__profile-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+
+
+        .menu__icon {
+            color: white;
+            font-size: 2em;
+        }
+
+        @media screen and (min-width: 600px) {
+            .menu__icon {
+                display: none;
+            }
+        }
+
+        .menu__logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .menu__list {
+            display: flex;
+            align-items: center;
+        }
+
+        @media screen and (min-width: 600px) {
+            .menu__list {
+                display: inline-flex;
+            }
+        }
+
+        .menu__item {
+            list-style: none;
+            margin: 0 10px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .menu__link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .main-content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin-top: 0;
+        }
+
+        .account-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .account-info__section {
+            flex: 1 1 calc(50% - 20px);
+            padding: 20px;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        .account-info__section:nth-child(3) {
+            flex: 1 1 100%;
+            margin-top: 20px;
+        }
+
+        .account-info__section:nth-child(4) {
+            flex: 1 1 100%;
+        }
+
+        .account-info__section-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .account-info__section-content {
+            margin-top: 10px;
+        }
+
+        .account-info__button {
+            color: white;
+            background-color: #f970ae;
+            font-weight: bold;
+            border: 1px solid #f970ae;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            width: auto;
+        }
+
+        .account-info__button:hover {
+            color: #ff85c1;
+        }
+
+        .account-info__section-content ul {
+            list-style-type: none;
+        }
+
+        .buttonadicionar{
+            background-color: white;
+            border: none;
+        }
+
+
+        @media screen and (max-width: 800px) {
+            .account-info__section {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .account-info__section {
+                flex: 1 1 calc(100% - 20px);
+            }
+        }
+
+        .footer {
+            grid-area: footer;
+            background: #f970ae;
+            text-align: left;
+            color: white;
+            padding: 20px 20px;
+            text-decoration: none;
+        }
+
+        .footer__columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .footer__column {
+            flex: 1 1 200px;
+            margin-right: 20px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer__column strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer__column ul {
+            list-style: none;
+            padding: 0;
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer__column ul li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <div class="menu__container">
+            <a href="index.html">
+                <img class="menu__logo" src="img/logofundobranco.png" alt="Logo">
+            </a>
+            <i class="menu__icon ion-navicon" id="icon"></i>
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a href="pagbusca.html" class="menu__link">Buscar Vaga</a>
+                </li>
+                <li class="menu__item">
+                    <a href="criar-anuncio.html" class="menu__link">Anunciar Garagem</a>
+                </li>
+                <li class="menu__item">
+                    <a href="minha-conta.html" class="menu__link">
+                        <img src="img/profile.jpg" alt="Perfil" class="menu__profile-img">
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a href="logout.html" class="menu__link">Sair</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Minha Carteira</h1>
+        </div>
+        <div class="account-info">
+            <div class="account-info__section">
+                <div class="account-info__section-title"><strong>Saldo Disponível</strong></div>
+                <div class="account-info__section-content"><strong>R$ 500,00</strong></div>
+                <button class="account-info__button">Sacar</button>
+            </div>
+            <div class="account-info__section">
+                <div class="account-info__section-title">Saldo em Andamento</div>
+                <div class="account-info__section-content" style="color: #ccc;">R$ 200,00</div>
+            </div>
+            <div class="account-info__section">
+                <div class="account-info__section-title">Total Recebido</div>
+                <div class="account-info__section-content">R$ 1.200,00</div>
+            </div>
+            <div class="account-info__section">
+                <div class="account-info__section-title">Contas Bancárias</div>
+                <div class="account-info__section-content">
+                    <ul>
+                        <li>Conta Corrente - Banco do Brasil (**** 1234)</li>
+                        <li>Conta Poupança - Caixa Econômica Federal (**** 5678)</li>
+                    </ul>
+                </div>
+                <button class="buttonadicionar" style="color: #f970ae;">Adicionar nova conta</button>
+            </div>
+            <div class="account-info__section">
+                <div class="account-info__section-title">Histórico de Movimentações</div>
+                <div class="account-info__section-content">
+                    <ul>
+                        <li>15/06/2024 - Recebimento de R$ 300,00</li>
+                        <li>10/06/2024 - Recebimento de R$ 500,00</li>
+                        <li>02/06/2024 - Saque de R$ 100,00</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer__columns">
+            <div class="footer__column">
+                <strong>Links</strong>
+                <ul>
+                    <li><a href="criar-anuncio.html" class="footer__column">Anunciar Garagem</a></li>
+                    <li><a href="pagbusca.html" class="footer__column">Buscar Vagas</a></li>
+                    <li><a href="minha-conta.html" class="footer__column">Minha Conta</a></li>
+                    <li><a href="central.html" class="footer__column">Central de Ajuda</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <strong>Contato</strong>
+                <ul>
+                    <li>Email:<br>suportegarashare@garashare.com</li>
+                    <li>Telefone: (11) 99999-9999</li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <strong>Termos</strong>
+                <ul>
+                    <li><a href="termos.html" class="footer__column">Termos de Uso</a></li>
+                    <li><a href="politica.html" class="footer__column">Política de Privacidade</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
