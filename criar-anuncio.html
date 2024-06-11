@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Anúncio</title>
+    <link rel="stylesheet" href="criar-anuncio.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:500|Roboto:400,500" type="text/css">
+    <link rel="shortcut icon" href="img/favicongarashare.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="menu">
+        <div class="menu__container">
+            <a href="/garage-for-rent/index.html">
+                <img class="menu__logo" src="img/logofundobranco.png" alt="Logo">
+            </a>
+            <i class="menu__icon ion-navicon" id="icon"></i>
+            <ul class="menu__list">
+                <li class="menu__item">Buscar Vaga</li>
+                <li class="menu__item">Anunciar Garagem</li>
+                <li class="menu__item">
+                    <a href="login.html" class="menu__link">Entrar</a>
+                </li>
+                <li class="menu__item">
+                    <a href="cadastro.html" class="menu__button">Cadastre-se</a>
+                </li>          
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Criar Anúncio</h1>
+        </div>
+        <form class="create-announcement-form">
+            <div class="form-group">
+                <label for="title">Título do Anúncio</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Descrição</label>
+                <textarea id="description" name="description" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="photos">Fotos (máximo 3)</label>
+                <input type="file" id="photos" name="photos" accept="image/*" multiple required>
+            </div>
+            <div class="form-group">
+                <label for="available-from">Disponível a partir de</label>
+                <input type="date" id="available-from" name="available-from" required>
+            </div>
+            <div class="form-group">
+                <label for="available-to">Disponível até</label>
+                <input type="date" id="available-to" name="available-to" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Preço por noite (R$)</label>
+                <input type="number" id="price" name="price" min="0" required>
+            </div>
+            <button type="submit" class="submit-button">Enviar Anúncio</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <div class="footer__columns">
+            <div class="footer__column">
+                <strong>Links</strong>
+                <ul>
+                    <li>Cadastrar-se</li>
+                    <li>Buscar Vagas</li>
+                    <li>Criar Anúncio</li>
+                    <li>
+                        <a href="#" class="footer__column">Central de ajuda</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <strong>Contato</strong>
+                <ul>
+                    <li>Email:<br>suportegarashare@garashare.com</li>
+                    <li>Telefone: (11) 99999-9999</li>
+                    <li>Endereço</li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <strong>Termos</strong>
+                <ul>
+                    <li>Termos de Uso</li>
+                    <li>Política de Privacidade</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
