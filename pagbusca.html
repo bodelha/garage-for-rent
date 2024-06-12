@@ -267,6 +267,64 @@
             text-decoration: none;
             color: white;
         }
+
+
+@media screen and (max-width: 599px) {
+    .search-container {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center; /* Centraliza os itens verticalmente */
+        margin: 10px auto;
+        padding: 20px;
+        max-width: 100%;
+        border-radius: 10px;
+        text-align: center; /* Centraliza o conteúdo horizontalmente */
+    }
+
+    .search-group {
+        margin-bottom: 10px;
+        text-align: left; /* Alinha o texto à esquerda dentro dos grupos */
+    }
+
+    .search-group label,
+    .search-group .instruction {
+        font-size: 12px; /* Ajuste o tamanho da fonte para telas menores */
+    }
+
+    .search-group input {
+        width: 100%; /* Ocupar toda a largura do container */
+        box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho */
+    }
+
+    .search-button {
+        margin-top: 10px; /* Espaçamento superior */
+        display: inline-block; /* Para que o botão possa ter margens */
+        vertical-align: middle; /* Alinha verticalmente ao centro */
+        margin-left: 42.5%;
+    }
+
+    .search-button img {
+        background-attachment: fixed;
+        height: 20px; /* Reduzir o tamanho do ícone de busca */
+        width: auto;
+        border-radius: 8px; /* Garante que a imagem do ícone seja circular */
+        object-fit: cover;
+    }
+
+    .garage-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 0 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 20px;
+    }
+
+    .garage-item {
+        padding: 10px;
+    }
+}
+
     </style>
 </head>
 
