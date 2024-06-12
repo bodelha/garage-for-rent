@@ -230,7 +230,7 @@
             background-color: white;
             align-items: center;
             padding: 20px;
-            margin: 50px 275px 0 275px;
+            margin: 30px 275px 0 275px;
         }
 
         .avaliacoes-section h2 {
@@ -250,7 +250,7 @@
             padding: 25px;
             border-radius: 10px;
             flex: 0 0 auto;
-            border: 1px solid gray;
+            border: 1px solid #F970AE;
             width: 270px;
             height: 180px;
         }
@@ -262,24 +262,10 @@
             margin-bottom: 10px;
         }
 
-        .ler-mais {
-            background-color: #f970ae;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 10px 50px;
-        }
-
-        .ler-mais:hover {
-            background-color: #FF85C1;
-        }
-
         .enderecos-section {
             background-color: white;
             padding: 20px;
-            margin: 50px 275px 0 275px;
+            margin: 30px 275px 0 275px;
         }
 
         .enderecos-section h2 {
@@ -341,6 +327,24 @@
 
         .more-info-link:hover {
             font-weight: bold;
+        }
+
+        .hidden-text {
+            display: none;
+        }
+
+        .less-info-link {
+            background-color: white;
+            color: #f970ae;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        display: none;
+        }
+
+        .less-info-link:hover {
+        font-weight: bold;
         }
 
         .footer {
@@ -473,7 +477,6 @@
                     </div>
                 </div>
             </div>
-            <button class="ler-mais">Ler mais avaliações</button>
         </section>
         <section class="enderecos-section">
             <h2>Endereços que curtimos:</h2>
@@ -514,8 +517,15 @@
                 propósito de conectar essas duas necessidades de forma simples, prática e eficiente. Junte-se a nós e
                 faça parte dessa solução inteligente para a mobilidade urbana!
             </p>
-            <a href="#" class="more-info-link">Exibir mais informações sobre Garashare</a>
+            <p class="hidden-text">
+                Nossa missão é oferecer uma plataforma de fácil uso, que permita aos usuários encontrar e anunciar
+                garagens com segurança e praticidade. Trabalhamos constantemente para melhorar nossos serviços e
+                atender às necessidades de nossos clientes, sempre com o foco na inovação e na excelência.
+            </p>
+            <a href="#" class="more-info-link" onclick="showMoreInfo(event)">Exibir mais informações sobre Garashare</a>
+            <a href="#" class="less-info-link hidden-text" onclick="showLessInfo(event)">Exibir menos</a>
         </div>
+        
 
         <div class="footer">
             <div class="footer__columns">
@@ -545,6 +555,35 @@
             </div>
         </div>
     </main>
+
+    <script>
+        function showMoreInfo(event) {
+            event.preventDefault();
+            const hiddenText = document.querySelector('.hidden-text');
+            hiddenText.style.display = 'block';
+            event.target.style.display = 'none';
+        }
+        function showLessInfo(event) {
+            event.preventDefault();
+            const hiddenText = document.querySelector('.hidden-text');
+            hiddenText.style.display = 'none';
+            const moreInfoLink = document.querySelector('.more-info-link');
+            moreInfoLink.style.display = 'inline';
+            const lessInfoLink = document.querySelector('.less-info-link');
+            lessInfoLink.style.display = 'none'; 
+        }
+
+        function showMoreInfo(event) {
+            event.preventDefault();
+            const hiddenText = document.querySelector('.hidden-text');
+            hiddenText.style.display = 'block';
+            const moreInfoLink = document.querySelector('.more-info-link');
+            moreInfoLink.style.display = 'none';
+            const lessInfoLink = document.querySelector('.less-info-link');
+            lessInfoLink.style.display = 'inline';
+        }
+    </script>
+
 </body>
 
 </html>
